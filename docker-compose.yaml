@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  fixed_container:
+    image: hasharma16/my-docker-challenge:latest
+    ports:
+      - "80:80"
+
+  metrics_scraper:
+    build: 
+      context: .
+      dockerfile: metrics-scrapper/Dockerfile
+    ports:
+      - "8080:8080"
